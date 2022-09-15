@@ -1,18 +1,6 @@
 <template>
-    <ion-page>
-        <ion-header>
-            <ion-toolbar size="large">
-                <ion-buttons slot="start" >
-                    <ion-back-button class="text-white" :icon="arrowBackSharp" v-if="false">
-                    </ion-back-button>
-                    <ion-button v-if="true" @click="backToStart">
-                        <ion-icon color="primary" slot="icon-only" :icon="arrowBackSharp"></ion-icon>
-                    </ion-button>
-                </ion-buttons>
-                <ion-title class="text-xl font-bold tracking-widest">Verify Account</ion-title>
-            </ion-toolbar>
-        </ion-header>
-        <ion-content :fullscreen="true" class="bg-gray-100 h-screen">
+    <register-layout pageTitle="Verify Account" pageDefaultBackLink="/tos">
+        <div class="flex flex-col p-4">
             <div class="p-8">
                 <div class=" mb-10">
                     <p class="text-center tracking-wider">
@@ -28,29 +16,21 @@
                     If you cannot locate the verification email in your main inbox, please check your junk or spam mailbox. If you still can’t locate it, <span class="font-bold underline">Resend Code</span>
                 </div>
             </div>
-        </ion-content>
-    </ion-page> 
+        </div>
+    </register-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonTitle, IonItem, IonHeader, IonContent, IonPage, IonToolbar, IonInput, IonBackButton, IonButton, IonButtons, IonIcon, useIonRouter, } from "@ionic/vue";
+import { IonInput, IonItem, IonButton, useIonRouter, } from "@ionic/vue";
 import { arrowBackSharp } from 'ionicons/icons';
 
 export default defineComponent({
     name: "VerifyAccount",
     components: {
         IonButton,
-        IonButtons,
-        IonIcon,
-        IonTitle,
-        IonHeader,
-        IonToolbar,
         IonInput,
-        IonContent,
-        IonPage,
         IonItem,
-        IonBackButton,
     },
 
     data() {
@@ -74,7 +54,7 @@ export default defineComponent({
             this.ionRouter.navigate("/dashboard", 'forward', 'replace');
         },
         backToStart() {
-            this.ionRouter.navigate("/login", 'back', 'replace');
+            this.$router.go(-1)
         }
     },
 })

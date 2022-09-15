@@ -4,12 +4,9 @@ import HomePage from '../views/HomePage.vue'
 import SplashPage from '../views/SplashPage.vue'
 import LandingPage from '../views/LandingPage.vue'
 import LoginPage from '../views/LoginPage.vue'
-import RegisterPage from '../views/RegisterPage.vue'
-import PersonalInfo from '../components/PersonalInformation.vue'
-import AccountDetails from '../components/AccountDetails.vue'
-import TermsAndConditions from '../components/TermsAndConditions.vue'
-import VerifyAccount from '../components/VerifyAccount.vue'
 import DashBoardPage from '../views/DashBoardPage.vue'
+
+//import RegisterPage from '../views/RegisterPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -36,29 +33,30 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Login',
     component: LoginPage
   },
-  {
-    path: '/register',
+  /*{
+    path: '/register/',
     name: 'Register',
     component: RegisterPage,
-    children: [
-        {
-          path: '/personalinfo',
-          component: PersonalInfo
-        },
-        {
-          path: '/accountdetails',
-          component: AccountDetails
-        },
-        {
-          path: '/termsandcondition',
-          component: TermsAndConditions
-        },
-    ]
+  },*/
+  {
+    path: '/register',
+    component: () => import('../components/register/PersonalInformation.vue'),
+    props: true,
+  },
+  {
+    path: '/details',
+    component: () => import('../components/register/AccountDetails.vue'),
+    props: true,
+  },
+  {
+    path: '/tos',
+    component: () => import('../components/register/TermsAndConditions.vue'),
+    props: true,
   },
   {
     path: '/verify',
-    name: 'verify',
-    component: VerifyAccount
+    component: () => import('../components/register/VerifyAccount.vue'),
+    props: true,
   },
   {
     path: '/dashboard',

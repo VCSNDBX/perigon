@@ -54,7 +54,7 @@
         },
         
         createAccount() {
-        this.ionRouter.navigate("/personalinfo", "forward");
+        this.ionRouter.navigate("/register", "forward", "replace");
         },
     },
  })
