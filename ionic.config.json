@@ -1,0 +1,7 @@
+{
+  "name": "Perigon",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
