@@ -1,21 +1,17 @@
 <template>
-    <ion-page>
-        hello world!
-    </ion-page>
+    <dash-board-layout>
+        
+    </dash-board-layout>
 </template>
+
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { IonPage} from '@ionic/vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-    components: {
-        IonPage,
-    },
-
     setup() {
         return {
-            
-        }
+
+        };
     },
 })
 </script>

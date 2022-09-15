@@ -24,13 +24,15 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 import './theme/core.css';
 import RegisterLayout from './components/register/RegisterLayout.vue';
+import DashBoardLayout from './components/dashboard/DashBoardLayout.vue';
 
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
 
 app.component('register-layout', RegisterLayout);
-  
+app.component('dash-board-layout', DashBoardLayout);
+
 router.isReady().then(() => {
   app.mount('#app');
 });

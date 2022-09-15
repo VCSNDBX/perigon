@@ -6,8 +6,6 @@ import LandingPage from '../views/LandingPage.vue'
 import LoginPage from '../views/LoginPage.vue'
 import DashBoardPage from '../views/DashBoardPage.vue'
 
-//import RegisterPage from '../views/RegisterPage.vue'
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -33,11 +31,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Login',
     component: LoginPage
   },
-  /*{
-    path: '/register/',
-    name: 'Register',
-    component: RegisterPage,
-  },*/
   {
     path: '/register',
     component: () => import('../components/register/PersonalInformation.vue'),
