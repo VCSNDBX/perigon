@@ -3,13 +3,13 @@
         <ion-header>
             <ion-toolbar size="large">
                 <ion-buttons slot="start">
-                    <ion-back-button class="primary" :icon="arrowBackSharp" :default-href="pageDefaultBackLink">
+                    <ion-back-button color="light" :icon="arrowBackSharp" :default-href="pageDefaultBackLink">
                     </ion-back-button>
                 </ion-buttons>
                 <ion-title class="text-xl font-bold tracking-widest">{{ pageTitle }}</ion-title>
             </ion-toolbar>
         </ion-header>
-        <ion-content :fullscreen="true" class="bg-gray-100 h-screen">
+        <ion-content :fullscreen="true">
             <slot />
         </ion-content>
     </ion-page> 
@@ -35,4 +35,3 @@
       },
  })
  </script>
- 

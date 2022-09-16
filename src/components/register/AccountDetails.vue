@@ -1,5 +1,5 @@
 <template>
-    <register-layout pageTitle="Create Account" pageDefaultBackLink="/register">
+    <register-layout page-title="Create Account" page-default-back-link="/register">
         <div class="flex flex-col p-4">
             <div class="p-8">
                 <p class="text-center font-normal tracking-wider">
@@ -9,14 +9,14 @@
             <div class="flex justify-around">
                 <div class="grid place-items-center">
                     <div class="bg-black rounded-full w-12 h-12 flex">
-                        <ion-icon color="primary" :icon="personSharp" class="m-auto"></ion-icon>
+                        <ion-icon color="light" :icon="personSharp" class="m-auto"></ion-icon>
                     </div>
                     <div class="text-center font-bold">Personal Information</div>
                     </div>
                     <div class="border-t-2 border-dashed w-full my-auto mt-6"></div>
                     <div class="grid place-items-center ">
                         <div class="bg-black rounded-full w-12 h-12 flex">
-                            <ion-icon color="primary" :icon="shieldCheckmarkSharp" class="m-auto"></ion-icon>
+                            <ion-icon color="light" :icon="shieldCheckmarkSharp" class="m-auto"></ion-icon>
                         </div>
                         <div class="text-center font-bold">Account Details</div>
                     </div>

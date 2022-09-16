@@ -20,7 +20,7 @@
                     <div class="text-xs pb-3">Next class in:</div>
                     <div class="flex justify-between w-full">
                         <div class="text-sm my-auto">No next class avaialble.</div>
-                        <div class="flex text-lg font-bold my-auto">BOOK NOW
+                        <div class="flex text-lg font-bold my-auto" @click="bookNow">BOOK NOW
                         <ion-icon class="my-auto" color="black" :icon="chevronForwardSharp" />
                         </div>
                     </div>
@@ -28,14 +28,15 @@
             </div>
             <slot />
             <ion-tabs>
-                <ion-router-outlet></ion-router-outlet>
-                <ion-tab-bar slot="bottom" class="z-0">
+                <!-- Having problem with header being unclickable using router-outlet -->
+                <ion-router-outlet></ion-router-outlet> 
+                <ion-tab-bar slot="bottom">
                     <ion-tab-button tab="home" href="/dashboard" id="home-btn">
                     <img :src="home" />
                     <ion-label class="text-xs" color="secondary">Home</ion-label>
                     </ion-tab-button>
 
-                    <ion-tab-button tab="passes" href="/dashboard" id="passes-btn">
+                    <ion-tab-button tab="passes" href="/passes" id="passes-btn">
                     <img :src="passes" />
                     <ion-label class="text-xs" >Passes</ion-label>
                     </ion-tab-button>
@@ -45,12 +46,12 @@
                     <ion-label>Class</ion-label>
                     </ion-tab-button>
 
-                    <ion-tab-button tab="instructor" href="/dashboard" id="instr-button">
+                    <ion-tab-button tab="instructor" href="/instructor" id="instr-button">
                     <img :src="instructor" />
                     <ion-label class="text-xs">Instructors</ion-label>
                     </ion-tab-button>
 
-                    <ion-tab-button tab="notification" href="/dashboard" id="notif-btn">
+                    <ion-tab-button tab="notification" href="/notification" id="notif-btn">
                     <img :src="notification" />
                     <ion-label class="text-xs">Notification</ion-label>
                     </ion-tab-button>
@@ -62,7 +63,7 @@
  
  <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonPage, IonContent, IonIcon, IonTabs, IonLabel, IonTabBar, IonTabButton, IonRouterOutlet, } from '@ionic/vue';
+import { IonPage, IonContent, IonIcon, IonTabs, IonLabel, IonTabBar, IonTabButton, IonRouterOutlet, useIonRouter, } from '@ionic/vue';
 import { chevronForwardSharp, } from 'ionicons/icons';
 
 export default defineComponent({
@@ -76,6 +77,7 @@ export default defineComponent({
         IonTabButton,
         IonRouterOutlet,
     },
+
     data() {
         return {
             firstName: "Samatha",
@@ -92,12 +94,18 @@ export default defineComponent({
         };
     },
     setup() {
+        const ionRouter = useIonRouter();
+
         return {
             chevronForwardSharp,
+            ionRouter,
         }
     },
     methods: {
     // create modal box with guidelines? if no schedule found
+        bookNow() {
+            this.ionRouter.navigate("/passes", 'forward', 'replace');
+        },
     },
 })
 </script>

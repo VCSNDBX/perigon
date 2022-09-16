@@ -1,5 +1,5 @@
 <template>
-    <register-layout pageTitle="Create Account" pageDefaultBackLink="/login">
+    <register-layout page-title="Create Account" page-default-back-link="/login">
         <div class="flex flex-col p-4">
             <div class="p-8">
                 <p class="text-center font-normal tracking-wider">
@@ -9,7 +9,7 @@
                 <div class="flex justify-around">
                     <div class="grid place-items-center">
                         <div class="bg-black rounded-full w-12 h-12 flex">
-                            <ion-icon color="primary" :icon="personSharp" class="m-auto"></ion-icon>
+                            <ion-icon color="light" :icon="personSharp" class="m-auto"></ion-icon>
                         </div>
                         <div class="text-center font-bold">Personal Information</div>
                     </div>
@@ -106,7 +106,7 @@ export default defineComponent({
     },
     methods: {
         goToDetails() {
-        this.ionRouter.navigate("/details", "forward", "replace");
+        this.ionRouter.navigate("/details", 'forward', 'replace');
         },
         hasAccount() {
         this.ionRouter.navigate("/login", 'forward', 'replace');

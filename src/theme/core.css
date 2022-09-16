@@ -40,9 +40,9 @@ ion-toolbar {
 ion-checkbox {
     --size: 22px;
     --background-checked: #000;
-  }
+}
   
-  ion-checkbox::part(container) {
+ion-checkbox::part(container) {
     border-radius: 6px;
     border: 2px solid #D6D6D6;
-  }
+}

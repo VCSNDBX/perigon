@@ -1,5 +1,5 @@
 <template>
-    <register-layout pageTitle="Verify Account" pageDefaultBackLink="/tos">
+    <register-layout page-title="Verify Account" page-default-back-link="/tos">
         <div class="flex flex-col p-4">
             <div class="p-8">
                 <div class=" mb-10">
@@ -51,7 +51,7 @@ export default defineComponent({
     },
     methods: {
         goVerify() {
-            this.ionRouter.navigate("/dashboard", 'forward', 'replace');
+            this.ionRouter.navigate("/login", 'forward', 'replace');
         },
         backToStart() {
             this.$router.go(-1)
