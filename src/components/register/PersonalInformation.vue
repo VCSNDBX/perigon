@@ -13,14 +13,14 @@
                         </div>
                         <div class="text-center font-bold">Personal Information</div>
                     </div>
-                    <div class="border-t-2 border-dashed w-full my-auto mt-6"></div>
+                    <div class="border-slate-300 border-t-2 border-dashed w-full my-auto mt-6"></div>
                     <div class="grid place-items-center ">
                         <div class="bg-white border-2 border-black border-solid rounded-full w-12 h-12 flex">
                             <ion-icon color="secondary" :icon="shieldCheckmarkSharp" class="m-auto"></ion-icon>
                         </div>
                         <div class="text-center">Account Details</div>
                     </div>
-                    <div class="border-t-2 border-dashed w-full my-auto mt-6"></div>
+                    <div class="border-slate-300 border-t-2 border-dashed w-full my-auto mt-6"></div>
                     <div class="grid place-items-center">
                         <div class="bg-white border-2 border-black border-solid rounded-full w-12 h-12 flex">
                             <ion-icon color="secondary" :icon="checkmarkSharp" class="m-auto"></ion-icon>

@@ -19,7 +19,7 @@
                     </ion-item>
                     <div class="text-left text-xs font-thin tracking-wider py-3 px-2">Forgot password?</div>
                     <ion-button fill="clear" expand="block" class="bg-black rounded-lg mt-8 text-white font-bold" @click="login">LOGIN</ion-button>
-                    <div class="text-center text-xs font-normal tracking-wider py-10" @click="createAccount"> Don't have an account? <span class="font-bold underline">Create account</span></div>
+                    <div class="text-center text-xs font-normal tracking-wider py-10"> Don't have an account? <span class="font-bold underline" @click="createAccount">Create account</span></div>
                 </div>
             </div>
         </ion-content>

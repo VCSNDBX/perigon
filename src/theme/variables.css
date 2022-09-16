@@ -4,6 +4,8 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
   /** Customs **/
+  --ion-background-color: #E5E5E5;
+  --ion-background-color-rgb: 229,229,229;
 
   /** primary **/
   --ion-color-primary: #000000;
