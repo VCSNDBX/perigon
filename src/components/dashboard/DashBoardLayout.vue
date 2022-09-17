@@ -1,6 +1,6 @@
 <template>
     <ion-page>
-        <ion-content :fullscreen="true" class="h-screen">
+        <ion-content :fullscreen="true">
             <div class="bg-black h-64">
                 <div class="flex gap-4 w-full h-full px-6 -mt-15">
                     <img class="object-cover w-16 h-16 my-auto rounded-full" :src="profileDisplay" alt="Profile image" />
@@ -26,11 +26,10 @@
                     </div>
                 </div>
             </div>
-            <slot />
             <ion-tabs>
-                <!-- Having problem with header being unclickable using router-outlet -->
-                <ion-router-outlet></ion-router-outlet> 
-                <ion-tab-bar slot="bottom">
+                <!-- Having problem with header being unclickable using router-outlet --> 
+                <ion-router-outlet ></ion-router-outlet>
+                <ion-tab-bar class="bottom">
                     <ion-tab-button tab="home" href="/dashboard" id="home-btn">
                     <img :src="home" />
                     <ion-label class="text-xs" color="secondary">Home</ion-label>

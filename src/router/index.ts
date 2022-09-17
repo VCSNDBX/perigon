@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue'
-import SplashPage from '../views/SplashPage.vue'
-import LandingPage from '../views/LandingPage.vue'
-import LoginPage from '../views/LoginPage.vue'
-import DashBoardPage from '../views/DashBoardPage.vue'
+import HomePage from '../views/HomePage.vue';
+import SplashPage from '../views/SplashPage.vue';
+import LandingPage from '../views/LandingPage.vue';
+import LoginPage from '../views/LoginPage.vue';
+import DashBoardPage from '../views/DashBoardPage.vue';
+import PassesPage from '../views/PassesPage.vue';
+import ClassPage from '../views/ClassPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -55,6 +57,22 @@ const routes: Array<RouteRecordRaw> = [
     path: '/dashboard',
     name: 'dashboard',
     component: DashBoardPage
+  },
+  {
+    path: '/passes',
+    name: 'passes',
+    component: PassesPage
+  },
+  {
+    path: '/checkout/:pack/:total',
+    component: () => import('../views/CheckOutPage.vue'),
+    props: true,
+  },
+  {
+    path: '/class',
+    name: 'class',
+    component: ClassPage,
+    props: true,
   },
 ]
 
