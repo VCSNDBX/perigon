@@ -1,5 +1,5 @@
 <template>
-    <register-layout page-title="Create Account" page-default-back-link="/login">
+    <header-layout page-title="Create Account" page-default-back-link="/login">
         <div class="flex flex-col p-4">
             <div class="p-8">
                 <p class="text-center font-normal tracking-wider">
@@ -60,7 +60,7 @@
             </form>
             <div @click="hasAccount" class="text-center text-xs font-bold tracking-wider py-4 underline">Already signed up?</div>
         </div>
-    </register-layout> 
+    </header-layout> 
 </template>
 
 <script lang="ts">

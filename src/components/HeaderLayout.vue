@@ -9,7 +9,7 @@
                 <ion-title class="text-xl font-bold tracking-widest">{{ pageTitle }}</ion-title>
             </ion-toolbar>
         </ion-header>
-        <ion-content :fullscreen="true">
+        <ion-content :fullscreen="true" >
             <slot />
         </ion-content>
     </ion-page> 
@@ -17,7 +17,7 @@
  
  <script lang="ts">
  import { defineComponent } from 'vue';
- import { IonPage, IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton, } from "@ionic/vue";
+ import { IonPage, IonHeader, IonContent, IonTitle, IonToolbar,  IonButtons, IonBackButton, } from "@ionic/vue";
  import { arrowBackSharp } from 'ionicons/icons';
  
  export default defineComponent({
@@ -35,3 +35,4 @@
       },
  })
  </script>
+ 

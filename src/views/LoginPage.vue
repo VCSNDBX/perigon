@@ -1,6 +1,6 @@
 <template>
     <ion-page>
-        <ion-content>
+        <ion-content :scroll-y="false">
             <div class="h-full w-full flex bg-black text-white login-bg justify-center">
                 <div class="flex flex-col m-auto px-6">
                     <div class="text-center text-3xl font-bold mb-16 tracking-wide">

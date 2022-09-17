@@ -1,5 +1,5 @@
 <template>
-    <register-layout page-title="Verify Account" page-default-back-link="/tos">
+    <header-layout page-title="Verify Account" page-default-back-link="/tos">
         <div class="flex flex-col p-4">
             <div class="p-8">
                 <div class=" mb-10">
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-    </register-layout>
+    </header-layout>
 </template>
 
 <script lang="ts">

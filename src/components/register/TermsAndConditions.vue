@@ -1,5 +1,5 @@
 <template>
-    <register-layout page-title="Create Account" page-default-back-link="/details">
+    <header-layout page-title="Create Account" page-default-back-link="/details">
         <div class="flex flex-col p-4">
             <div class="p-8">
                 <p class="text-center font-normal tracking-wider">
@@ -42,7 +42,7 @@
             </ion-button>
         </div>
         </div>
-    </register-layout>
+    </header-layout>
 </template>
 
 <script lang="ts">

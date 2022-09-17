@@ -1,5 +1,5 @@
 <template>
-    <register-layout page-title="Create Account" page-default-back-link="/register">
+    <header-layout page-title="Create Account" page-default-back-link="/register">
         <div class="flex flex-col p-4">
             <div class="p-8">
                 <p class="text-center font-normal tracking-wider">
@@ -64,7 +64,7 @@
         <ion-button fill="clear" expand="block" class="bg-black rounded-md px-16 text-white font-bold" @click="goToTAC">Next</ion-button>
         </form>
         </div>
-</register-layout>
+</header-layout>
 </template>
 
 <script lang="ts">
