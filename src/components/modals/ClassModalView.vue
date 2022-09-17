@@ -1,5 +1,5 @@
 <template>
-  <ion-content :scroll-y="false" class="ion-padding bg-white">
+  <ion-content :scroll-y="false" class="ion-padding">
       <div :class="`px-4 absolute ${waitList ? true : 'invisible' }`">
       <div class="font-bold pb-4 tracking-thin">WAITLIST</div>
       <p class="pb-4 text-sm">This class is already full. No worries! We can waitlist you and book you a seat once it will be available for 1 seat only. Are you sure you want to continue?</p>
