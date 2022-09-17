@@ -6,7 +6,7 @@
                     <ion-back-button color="light" :icon="arrowBackSharp" :default-href="pageDefaultBackLink">
                     </ion-back-button>
                 </ion-buttons>
-                <ion-title class="text-xl font-bold tracking-widest">{{ pageTitle }}</ion-title>
+                <ion-title class="text-2xl font-bold tracking-widest">{{ pageTitle }}</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" >

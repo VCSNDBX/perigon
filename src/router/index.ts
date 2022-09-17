@@ -7,6 +7,8 @@ import LoginPage from '../views/LoginPage.vue';
 import DashBoardPage from '../views/DashBoardPage.vue';
 import PassesPage from '../views/PassesPage.vue';
 import ClassPage from '../views/ClassPage.vue';
+import SpotsPage from '../views/SpotsPage.vue';
+import BookSummary from '../views/BookSummary.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,22 +37,22 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/register',
-    component: () => import('../components/register/PersonalInformation.vue'),
+    component: () => import('../views/PersonalInformation.vue'),
     props: true,
   },
   {
     path: '/details',
-    component: () => import('../components/register/AccountDetails.vue'),
+    component: () => import('../views/AccountDetails.vue'),
     props: true,
   },
   {
     path: '/tos',
-    component: () => import('../components/register/TermsAndConditions.vue'),
+    component: () => import('../views/TermsAndConditions.vue'),
     props: true,
   },
   {
     path: '/verify',
-    component: () => import('../components/register/VerifyAccount.vue'),
+    component: () => import('../views/VerifyAccount.vue'),
     props: true,
   },
   {
@@ -72,6 +74,18 @@ const routes: Array<RouteRecordRaw> = [
     path: '/class',
     name: 'class',
     component: ClassPage,
+    props: true,
+  },
+  {
+    path: '/spots',
+    name: 'spots',
+    component: SpotsPage,
+    props: true,
+  },
+  {
+    path: '/booksummary',
+    name: 'booksummary',
+    component: BookSummary,
     props: true,
   },
 ]

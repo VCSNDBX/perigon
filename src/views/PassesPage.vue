@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <ion-button size="large" expand="block" :color="total ? 'dark' : 'light'" :class="`grow font-bold rounded-lg tracking-widest text-md h-14 ${total ? '' : 'border border-black border-solid' }`" :disabled="total ? false : true" @click="checkOut">CHECKOUT</ion-button>
+                        <ion-button size="large" expand="block" :color="total ? 'primary' : 'light'" :class="`grow font-bold rounded-lg tracking-widest text-md h-14 ${total ? '' : 'border border-black border-solid' }`" :disabled="total ? false : true" @click="checkOut">CHECKOUT</ion-button>
                     </div>
                 </div>
             </div>

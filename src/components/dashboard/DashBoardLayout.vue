@@ -92,6 +92,7 @@ export default defineComponent({
             notification: "/assets/img/notification.svg",
         };
     },
+    
     setup() {
         const ionRouter = useIonRouter();
 

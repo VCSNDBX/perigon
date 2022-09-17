@@ -42,7 +42,7 @@
 <script lang="ts">
 import { IonDatetime, IonItemGroup, IonButton, useIonRouter, modalController } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import  ModalView  from '../components/ModalView.vue';
+import  ModalView  from '../components/modals/ClassModalView.vue';
 
 export default defineComponent({
 
@@ -94,7 +94,7 @@ export default defineComponent({
             if(bookStatus == 'WAITLIST'){
                 this.openModal();
             }else{
-                this.ionRouter.navigate("/class/", "forward", "replace");
+                this.ionRouter.navigate("/spots", "forward", "replace");
             }
         },
     }
