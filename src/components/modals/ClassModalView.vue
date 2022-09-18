@@ -61,7 +61,7 @@ export default defineComponent({
 
     goDashBoard(){
       modalController.dismiss();
-      this.ionRouter.navigate("/dashboard", "forward", "replace");
+      this.ionRouter.navigate("/dashboard/home2", "forward", "replace");
     },
   },
 });
