@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Perigon</string>
+    <string name="title_activity_main">Perigon</string>
+    <string name="package_name">com.perigon.app</string>
+    <string name="custom_url_scheme">com.perigon.app</string>
+</resources>
