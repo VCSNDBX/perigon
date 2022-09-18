@@ -1,80 +1,102 @@
 <template>
     <ion-page>
-      <swiper
-        ref="slideSwiper"
-        class="bg-white h-screen w-screen"
-        :options="swiperOptions"
-        :slides-per-view="1"
-        :modules="modules"
-        effect="fade"
-        :auto-destroy="true"
-        :delete-instance-on-destroy="true"
-        :cleanup-styles-on-destroy="true"
-      >
-        <swiper-slide
-          v-for="(item, index) in landingContent"
-          :key="index"
-          :virtualIndex="index"
-          class="bg-white"
-        >
-          <LandingSlider
-            :position="index"
-            :icon="item.icon"
-            :title="item.title"
-            :descriptions="item.description"
-          ></LandingSlider>
-        </swiper-slide>
-      </swiper>
+        <ion-content :fullscreen="true" class="flex justify-center flex-col w-screen">
+            <ion-slides :pager="true" :options="slideOpts" ref="mySlides" class="mt-20">
+              <ion-slide class="flex flex-col">
+                  <div class="bg-black rounded-full mx-auto mb-8 p-12">
+                      <img :src="ticket">
+                  </div>
+                  <div class="text-center text-black text-xl font-bold">
+                    BUY PASSES
+                  </div>
+                  <div class="text-center text-gray-500 text-xl font-normal px-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar ac neque, enim cursus est facilisis.
+                  </div>
+              </ion-slide>
+              <ion-slide class="flex flex-col">
+                  <div class="bg-black rounded-full mx-auto mb-10 p-12">
+                    <img :src="ride">
+                  </div>
+                  <div class="text-center text-black text-xl font-bold py-2">
+                    BOOK A RIDE
+                  </div>
+                  <div class="text-center text-gray-500 text-xl font-normal py-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar ac neque, enim cursus est facilisis.
+                  </div>
+              </ion-slide>
+              <ion-slide class="flex flex-col">
+                  <div class="bg-black rounded-full mx-auto mb-10 p-12">
+                    <img :src="pay">
+                  </div>
+                  <div class="text-center text-black text-xl font-bold py-2">
+                    PAY AT YOUR CONVINENCE
+                  </div>
+                  <div class="text-center text-gray-500 text-xl font-normal py-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar ac neque, enim cursus est facilisis.
+                  </div>
+              </ion-slide>
+          </ion-slides>
+          <div class="flex flex-col justify-center">
+            <ion-button fill="clear" class="bg-black rounded-md mx-auto px-16 text-white font-bold" @click="nextSlide">NEXT</ion-button>
+            <ion-button  fill="clear" color="secondary" class="text-black font-bold px-14 py-3 mx-auto text-sm" @click="skip">SKIP</ion-button>
+          </div>
+        </ion-content>
     </ion-page>
-  </template>
+</template>
  
- <script lang="ts">
-import { defineComponent } from 'vue';
-import { IonPage } from "@ionic/vue";
-import LandingSlider from '../components/LandingSlider.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Virtual, EffectFade } from "swiper";
-import 'swiper/css';
- 
- export default defineComponent({
-    components: { IonPage, LandingSlider, Swiper, SwiperSlide, },
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+import { IonSlides, IonSlide, IonPage, IonContent, useIonRouter } from '@ionic/vue'
 
-    setup() {
+export default defineComponent({
+    components: {
+        IonPage,
+        IonSlides,
+        IonSlide,
+        IonContent,
+    },
+
+    data() {
         return {
-            landingContent: [
-                {
-                icon: "ticket.png",
-                title: "BUY PASSES",
-                description: "Lorem ipsum dolor sit amet, <br/> consectetur adipiscing elit. Pulvinar<br/> ac neque, enim cursus est fascilisis.",
-                },
-                {
-                icon: "ride.png",
-                title: "BOOK A RIDE",
-                description:"Lorem ipsum dolor sit amet, <br/> consectetur adipiscing elit. Pulvinar<br/> ac neque, enim cursus est fascilisis.",
-                },
-                {
-                icon: "pay.png",
-                title: "PAY AT YOUR CONVINENCE",
-                description: "Lorem ipsum dolor sit amet, <br/> consectetur adipiscing elit. Pulvinar<br/> ac neque, enim cursus est fascilisis.",
-                },
-            ],
-
-            modules: [EffectFade, Virtual],
-
-            swiperOptions: {
-                spaceBetween: 30,
-                centeredSlides: true,
-                slidesOffsetBefore: "100px",
-                slidesOffsetAfter: "100px",
-                slidesPerView: "auto",
-                touchRatio: 0.2,
-                slideToClickedSlide: false,
-                navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-                },
-            },
+            ticket: "/assets/img/ticket.png",
+            ride: "/assets/img/ride.png",
+            pay: "/assets/img/pay.png",
         };
     },
- })
+
+    setup() {
+        const ionRouter = useIonRouter();
+
+        const mySlides = ref<any>(null);
+
+        const slideOpts = {
+            initialSlide: 0,
+            speed: 400,
+        };
+
+        const nextSlide = async () => {
+          const s = await mySlides?.value?.$el.getSwiper();
+          await s.slideNext();
+        };
+
+        return { 
+            slideOpts,
+            ionRouter,
+            mySlides,
+            nextSlide,
+        }
+    },
+
+    methods: {
+        skip() {
+            this.ionRouter.navigate("/login/", 'forward', 'replace');
+        },
+  },
+})
  </script>
+
+<style scoped>
+.swiper-slide {
+  height: 450px;
+}
+</style>

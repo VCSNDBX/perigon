@@ -1,6 +1,8 @@
 <template>
     <dash-board-layout>
-        
+        <div>
+            Nothing to see here!
+        </div>
     </dash-board-layout>
 </template>
 

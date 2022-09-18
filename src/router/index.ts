@@ -1,14 +1,13 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
 import SplashPage from '../views/SplashPage.vue';
 import LandingPage from '../views/LandingPage.vue';
 import LoginPage from '../views/LoginPage.vue';
-import DashBoardPage from '../views/DashBoardPage.vue';
 import PassesPage from '../views/PassesPage.vue';
 import ClassPage from '../views/ClassPage.vue';
 import SpotsPage from '../views/SpotsPage.vue';
 import BookSummary from '../views/BookSummary.vue';
+import DashBoardFooter from '../components/dashboard/DashBoardFooter.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -16,9 +15,24 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/splash'
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: HomePage,
+    path: '/dashboard/',
+    component: DashBoardFooter,
+    children: [
+      {
+        path: '',
+        redirect: '/dashboard/home'
+      },
+      {
+        path: 'home',
+        component: () => import('@/views/HomePage.vue'),
+        props: true,
+      },
+      {
+        path: 'home2',
+        component: () => import('@/views/DashBoardPage.vue'),
+        props: true,
+      },
+    ]
   },
   {
     path: '/splash',
@@ -54,11 +68,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/verify',
     component: () => import('../views/VerifyAccount.vue'),
     props: true,
-  },
-  {
-    path: '/dashboard',
-    name: 'dashboard',
-    component: DashBoardPage
   },
   {
     path: '/passes',

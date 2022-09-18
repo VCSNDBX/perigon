@@ -8,8 +8,8 @@
                         <br /><br />
                         Kindly check your email to verify your account.</p>
                 </div>
-                <ion-item class="rounded-lg text-center tracking-widest font-bold border-2" lines="none">
-                    <ion-input type="email" v-model="code"></ion-input>
+                <ion-item color="light" class="rounded-lg text-center tracking-widest font-bold shadow-sm" lines="none">
+                    <ion-input class="rounded-lg text-black font-bold " type="email" v-model="code"></ion-input>
                 </ion-item>
                 <ion-button fill="clear" expand="block" class="bg-black rounded-lg mt-3 text-white font-bold" @click="goVerify">VERIFY CODE</ion-button>
                 <div class="mt-10 text-center tracking-wider">

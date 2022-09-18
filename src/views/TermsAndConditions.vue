@@ -29,25 +29,27 @@
             </div>
         </div>
         </div>
-        <div class="py-4 font-bold text-xl tracking-wider">TERMS AND CONDITIONS</div>
-        <div>
-            <div class="text-sm leading-6 tracking-wider font-normal justify-self-stretch">
-                The following terms and conditions shall be known as the "Agreement" and shall govern the use of PERIGON's website www.perigon.co (the "Website") and the PERIGON Mobile Application (the "App" ), the purchase of PERIGON classes, cancellation of purchase of PERIGON classes, registration for classes, purchase of merchandise, communication, with PERIGON, and use of and attendance at PERIGON's studios.<br /><br />
-                These Terms of Service incorporates by reference PERIGON's Privacy Policy.<br /><br />
-                The following terms and conditions shall be known as the "Agreement" and shall govern the use of PERIGON's website www.perigon.co (the "Website") and the PERIGON Mobile Application (the "App" ), the purchase of PERIGON classes, cancellation of purchase of PERIGON classes, registration for classes, purchase of merchandise, communication, with PERIGON, and use of and attendance at PERIGON's studios.<br /><br />
-                These Terms of Service incorporates by reference PERIGON's Privacy Policy.
+            <div class="py-4 font-bold text-xl tracking-wider">
+                TERMS AND CONDITIONS
             </div>
-
-            <ion-button fill="clear" expand="block" class="bg-black rounded-md px-16 text-white font-bold mt-14 mb-16" @click="iAgree">I ACCEPT
-            </ion-button>
-        </div>
+            <div>
+                <div class="text-sm leading-6 tracking-wider font-normal justify-self-stretch">
+                    The following terms and conditions shall be known as the "Agreement" and shall govern the use of PERIGON's website www.perigon.co (the "Website") and the PERIGON Mobile Application (the "App" ), the purchase of PERIGON classes, cancellation of purchase of PERIGON classes, registration for classes, purchase of merchandise, communication, with PERIGON, and use of and attendance at PERIGON's studios.<br /><br />
+                    These Terms of Service incorporates by reference PERIGON's Privacy Policy.<br /><br />
+                    The following terms and conditions shall be known as the "Agreement" and shall govern the use of PERIGON's website www.perigon.co (the "Website") and the PERIGON Mobile Application (the "App" ), the purchase of PERIGON classes, cancellation of purchase of PERIGON classes, registration for classes, purchase of merchandise, communication, with PERIGON, and use of and attendance at PERIGON's studios.<br /><br />
+                    These Terms of Service incorporates by reference PERIGON's Privacy Policy.
+                </div>
+                <ion-button fill="clear" expand="block" class="bg-black rounded-md px-16 text-white font-bold mt-14 mb-16" @click="iAgree">I ACCEPT
+                </ion-button>
+            </div>
         </div>
     </header-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonButton, useIonRouter, IonIcon, } from "@ionic/vue";
+import ModalView from "../components/modals/TACModalView.vue";
+import { IonButton, useIonRouter, IonIcon, modalController, onIonViewWillEnter } from "@ionic/vue";
 import { personSharp, shieldCheckmarkSharp, checkmarkSharp } from 'ionicons/icons';
 
 export default defineComponent({
@@ -56,9 +58,17 @@ export default defineComponent({
         IonButton,
         IonIcon,
     },
-    setup() {
 
+    setup() {
         const ionRouter = useIonRouter();
+
+        onIonViewWillEnter(async () => {
+            const modal = await modalController.create({
+            component: ModalView,
+            });
+            return modal.present();
+            //console.log('ionViewWillEnter!');
+        });
 
         return {
             personSharp,

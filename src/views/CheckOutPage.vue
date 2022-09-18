@@ -26,28 +26,19 @@
         </div>   
         <div class="bg-white fixed bottom-0 w-full px-7 h-24 pt-5">
             <ion-button fill="clear" expand="block" class="flex justify-center bg-black rounded-lg text-white font-bold " @click="bookClass">PLACE ORDER</ion-button>
-        </div>  
-        <!-- <ModalView :modalActive="modalActive">
-            <div class="bg-white flex-col justify-center px-8 py-4 mx-14 rounded-lg shadow-md border">
-                <div class="font-bold pb-4 tracking-thin">PURCHASE SUCCESSFUL!</div>
-                <p class="pb-4 text-sm">You have successfully purchased <span class="font-bold">{{pack}} Pack ({{pack}} passes)</span> that will expires on <span class="font-bold">45 days</span>. Would you like to book a class now?</p>
-                <ion-button fill="clear" expand="block" class="flex justify-center bg-black rounded-lg text-white font-bold text-sm">BOOK NOW</ion-button>  
-                <ion-button fill="clear" expand="block" class="flex justify-center font-bold text-sm" @click="maybeLater">Maybe Later</ion-button> 
-            </div>
-        </ModalView> -->
+        </div>
     </header-layout>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-//import ModalView from "../components/Modalview.vue";
-import { IonItem, IonLabel, IonSelectOption, IonItemGroup, IonButton, IonSelect, useIonRouter, } from "@ionic/vue";
+import { defineComponent } from 'vue';
+import  ModalView  from '../components/modals/CheckOutModalView.vue';
+import { IonItem, IonLabel, IonSelectOption, IonItemGroup, IonButton, IonSelect, useIonRouter, modalController } from "@ionic/vue";
 import { arrowBackSharp } from 'ionicons/icons';
 
 export default defineComponent({
     name: "PurchaseSummary",
     components: {
-        //ModalView,
         IonButton,
         IonItem,
         IonItemGroup,
@@ -69,26 +60,18 @@ export default defineComponent({
 
     setup() {
         const ionRouter = useIonRouter();
-        const modalActive = ref(false);
-        const toggleModal = () => {
-            modalActive.value = !modalActive.value;
-        };
 
         return {
             ionRouter,
             arrowBackSharp,
-            modalActive,
-            toggleModal,
         }
     },
     methods: {
-        // errors with custom modal. Skipping for now. (try ion-toast)
-        bookClass() {
-            this.ionRouter.navigate("/class", 'forward', 'replace');
-        },
-
-        maybeLater() {
-            this.ionRouter.navigate("/dashboard", 'forward', 'replace');
+        async bookClass() {
+            const modal = await modalController.create({
+            component: ModalView,
+            });
+            return modal.present();
         },
     },
 })

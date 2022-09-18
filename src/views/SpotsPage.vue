@@ -1,10 +1,11 @@
 <template>
     <header-layout page-title="PERIGON 45" page-default-back-link="/class">
         <!-- Legends -->
-        <div class="flex justify-center my-8">
+        <div class="backdroundthis h-full">
+        <div class="flex justify-center py-8">
             <div class="flex">
                 <div class="flex mr-8">
-                    <div class="rounded-full border-2 border-black mr-2" style="height: 14px; width: 14px;"></div>
+                    <div class="rounded-full border-2 border-white mr-2" style="height: 14px; width: 14px;"></div>
                     <ion-label class="align-self-center">Available</ion-label>
                 </div>
                 <div class="flex">
@@ -16,49 +17,48 @@
         <!-- Spots -->
         <div class="grid grid-cols-3  mx-14">
             <div class="grid grid-cols-3 gap-6">
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black bg-white text-center" style="height: 26px; width: 26px;">1</div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
+                <div :class="`rounded-full border-2 ${bnone ? bnone : ''}`" style="height: 26px; width: 26px;" @click="markThis"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black bg-white text-center" style="height: 26px; width: 26px;">2</div>
+                <div :class="`rounded-full border-2 ${bnone ? bnone : ''}`" style="height: 26px; width: 26px;" @click="markThis"></div>
                 <div style="height: 26px; width: 26px;"></div>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black bg-white  text-center" style="height: 26px; width: 26px;">3</div>
+                <div :class="`rounded-full border-2 ${bnone ? bnone : ''}`" style="height: 26px; width: 26px;" @click="markThis"></div>
                 <div style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
                 <div style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-black" style="height: 26px; width: 26px;"></div>
-                <div style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
                 <div style="height: 26px; width: 26px;"></div>
             </div>
             <div>
                 <!-- WHITE SPACE -->
             </div>
             <div class="grid grid-cols-1">
-                <div class="rounded-full border-2 border-black justify-self-center" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white justify-self-center" style="height: 26px; width: 26px;"></div>
                 <div style="height: 1px;"></div>
-                <div class="rounded-full border-2 border-black justify-self-center" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white justify-self-center" style="height: 26px; width: 26px;"></div>
                 <div style="height: 3px;"></div>
                 <div style="height: 3px;"></div>
                 <img class="object-cover rounded-full border-2 border-black my-auto justify-self-center" style="height: 62px; width: 62px;" :src="profileDisplay" alt="Profile image" />
                 <div style="height: 3px;"></div>
-                <div class="rounded-full border-2 border-black self-center justify-self-center" style="height: 26px; width: 26px;"></div>
+                <div class="rounded-full border-2 border-white self-center justify-self-center" style="height: 26px; width: 26px;"></div>
                 <div></div>
             </div>
         </div>
@@ -80,6 +80,7 @@
                 <div class="font-bold">12:00 PM</div>
             </div>
         </div>  
+    </div>
     </header-layout>
 </template>
 
@@ -97,6 +98,8 @@ export default defineComponent({
     data() {
         return {
             profileDisplay: "/assets/img/coach1.png",
+            bwhite: true,
+            bnone: 'bg-none',
         };
     },
 
@@ -108,10 +111,23 @@ export default defineComponent({
         };
     },
     methods: {
-        // errors with custom modal. Skipping for now. (try ion-toast)
+        markThis() {
+            if (this.bnone == 'bg-none') {
+                this.bnone = "bg-white border-black";
+            } else {
+                this.bnone = "bg-none";
+            }
+        },
+
         bookSummary() {
             this.ionRouter.navigate("/booksummary", 'forward', 'replace');
         },
     },
 })
 </script>
+
+<style>
+ion-content .backdroundthis {
+    background: #595959;
+}
+</style>

@@ -1,7 +1,6 @@
 <template>
-    <!-- BEST VIEW FOR iPhone 12 Pro ONLY!!!! Need to convert images to idk so sad.. -->
-    <header-layout page-title="Purchase Passes" page-default-back-link="/dashboard">
-        <ion-slides :options="slideOpts" class="h-4/5">
+    <header-layout page-title="Purchase Passes" page-default-back-link="/home2">
+        <ion-slides :options="slideOpts" class="-my-10">
             <ion-slide>
                 <div class="absolute top-20">
                     <img class="shadow-md" :src="ticketbot">
@@ -84,21 +83,19 @@
                 </div> 
             </ion-slide>
         </ion-slides>
-        <div class="absolute bottom-50 text-center tracking-widest w-full fixed">
+        <div class="text-center tracking-widest w-full">
             Entitles you to 5 PERIGON rides
         </div>
-        <div>
-            <div class="fixed bottom-0 w-full pb-7 px-7">
-                <div class="flex justify-between">
-                    <div class="flex justify-start">
-                        <div class="flex flex-col my-auto">
-                            <div class="text-xs text-gray-500">Total</div>
-                            <div class="font-bold tracking-widest text-black"> {{ displayedTotal }}</div>
-                        </div>
+        <div class="bg-white fixed bottom-0 w-full py-5 px-7"> 
+            <div class="flex justify-between">
+                <div class="flex justify-start">
+                    <div class="flex flex-col my-auto">
+                        <div class="text-xs text-gray-400">Total</div>
+                        <div class="font-bold tracking-widest text-black"> {{ displayedTotal }}</div>
                     </div>
-                    <div class="flex justify-end">
-                        <ion-button size="large" expand="block" :color="total ? 'primary' : 'light'" :class="`grow font-bold rounded-lg tracking-widest text-md h-14 ${total ? '' : 'border border-black border-solid' }`" :disabled="total ? false : true" @click="checkOut">CHECKOUT</ion-button>
-                    </div>
+                </div>
+                <div class="flex justify-end my-auto">
+                    <ion-button size="large" expand="block" :color="total ? 'primary' : 'dark'" class="grow font-bold rounded-lg tracking-widest text-md h-14 border-black border-solid" :disabled="total ? false : true" @click="checkOut">CHECKOUT</ion-button>
                 </div>
             </div>
         </div>
