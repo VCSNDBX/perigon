@@ -49,7 +49,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ModalView from "../components/modals/TACModalView.vue";
-import { IonButton, useIonRouter, IonIcon, modalController, onIonViewWillEnter } from "@ionic/vue";
+import { IonButton, useIonRouter, IonIcon, modalController, onIonViewDidEnter } from "@ionic/vue";
 import { personSharp, shieldCheckmarkSharp, checkmarkSharp } from 'ionicons/icons';
 
 export default defineComponent({
@@ -62,12 +62,11 @@ export default defineComponent({
     setup() {
         const ionRouter = useIonRouter();
 
-        onIonViewWillEnter(async () => {
+        onIonViewDidEnter(async () => {
             const modal = await modalController.create({
             component: ModalView,
             });
             return modal.present();
-            //console.log('ionViewWillEnter!');
         });
 
         return {

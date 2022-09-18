@@ -34,7 +34,8 @@
  
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { IonPage, IonContent, IonIcon, useIonRouter, } from '@ionic/vue';
+import  ModalView  from '../modals/NoPassModalView.vue';
+import { IonPage, IonContent, IonIcon, useIonRouter, modalController } from '@ionic/vue';
 import { chevronForwardSharp, } from 'ionicons/icons';
 
 export default defineComponent({
@@ -64,9 +65,17 @@ export default defineComponent({
     },
     methods: {
     // create modal box with guidelines? if no schedule found
-        bookNow() {
+        async bookNow() {
+                const modal = await modalController.create({
+                component: ModalView,
+                });
+                return modal.present();
+            },
+
+        buyPasses() {
             this.ionRouter.navigate("/passes", 'forward', 'replace');
         },
+
         openSettings() {
             // Passes - 0
             // Account Information

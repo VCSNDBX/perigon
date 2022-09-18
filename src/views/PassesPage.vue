@@ -1,5 +1,5 @@
 <template>
-    <header-layout page-title="Purchase Passes" page-default-back-link="/home2">
+    <header-layout page-title="Purchase Passes" page-default-back-link="/dashboard/home2">
         <ion-slides :options="slideOpts" class="-my-10">
             <ion-slide>
                 <div class="absolute top-20">

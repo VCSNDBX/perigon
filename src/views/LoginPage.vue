@@ -50,7 +50,7 @@
 
       methods: {
         login() {
-        this.ionRouter.navigate("/home2", "forward", "replace");
+        this.ionRouter.navigate("/dashboard/home2", "forward", "replace");
         },
         
         createAccount() {
