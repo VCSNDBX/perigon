@@ -14,8 +14,13 @@ If there was a previous installation of the Ionic CLI, it will need to be uninst
 
 - git clone https://github.com/VCSNDBX/Perigon.git or [Download Files](https://github.com/VCSNDBX/perigon/archive/refs/heads/master.zip)
 
-### Install & Run the App
+### Install 
 
-- $ cd perigon
-- $ npm install
-- $ ionic serve
+- cd perigon
+- npm install
+
+### You can run the following commands for Browser, Android and iOS projects.
+
+- ionic serve
+- npx cap open android
+- npx cap open ios
