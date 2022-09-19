@@ -16,37 +16,39 @@
         </div>
         <!-- Spots -->
         <div class="grid grid-cols-3  mx-14">
+        <ion-item-group>
             <div class="grid grid-cols-3 gap-6">
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div :class="`rounded-full border-2 ${bnone ? bnone : ''}`" style="height: 26px; width: 26px;" @click="markThis"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div :class="`rounded-full border-2 ${bnone ? bnone : ''}`" style="height: 26px; width: 26px;" @click="markThis"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div style="height: 26px; width: 26px;"></div>
                 <div class="rounded-full border-2 border-black bg-black" style="height: 26px; width: 26px;"></div>
-                <div :class="`rounded-full border-2 ${bnone ? bnone : ''}`" style="height: 26px; width: 26px;" @click="markThis"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
-                <div class="rounded-full border-2 border-white" style="height: 26px; width: 26px;"></div>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
+                <ion-checkbox style="height: 26px; width: 26px;"></ion-checkbox>
                 <div style="height: 26px; width: 26px;"></div>
             </div>
+        </ion-item-group>
             <div>
                 <!-- WHITE SPACE -->
             </div>
@@ -86,12 +88,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { IonButton, IonLabel, useIonRouter, } from '@ionic/vue'
+import { IonButton, IonItemGroup, IonCheckbox, IonLabel, useIonRouter, } from '@ionic/vue'
 
 export default defineComponent({
 
     components: {
         IonButton,
+        IonItemGroup, 
+        IonCheckbox,
         IonLabel,
     },
 
@@ -130,4 +134,18 @@ export default defineComponent({
 ion-content .backdroundthis {
     background: #595959;
 }
+
+ion-checkbox {
+    --background: initial !important;
+}
+
+ion-checkbox::part(container) {
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-radius: 25px !important;
+    border-color: white !important;
+    --background-checked: white !important;
+    --checkmark-color: black !important;
+}
+
 </style>
