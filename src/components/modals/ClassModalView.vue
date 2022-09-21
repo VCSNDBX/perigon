@@ -1,12 +1,12 @@
 <template>
   <ion-content :scroll-y="false" class="ion-padding">
-      <div :class="`text-center px-4 h-full absolute ${waitList ? true : 'invisible' }`">
+      <div :class="`text-center px-4 absolute ${waitList ? true : 'invisible' }`">
       <div class="font-extrabold text-2xl pb-3 tracking-wide">WAITLIST</div>
       <p class="pb-2 text-sm">This class is already full. No worries! We can waitlist you and book you a seat once it will be available for 1 seat only. Are you sure you want to continue?</p>
       <ion-button fill="clear" expand="block" class="flex justify-center bg-black rounded-lg text-white font-bold text-sm" @click="yesWaitList">YES</ion-button>  
       <ion-button fill="clear" expand="block" class="flex justify-center font-bold text-sm" @click="closeModal">CANCEL</ion-button>
       </div>
-      <div :class="`text-center px-4 h-full mt-5 absolute ${showSucc ? false : 'invisible' }`">
+      <div :class="`text-center px-4 absolute ${showSucc ? false : 'invisible' }`">
       <div class="font-extrabold text-2xl pb-4 tracking-wide w-auto">Waitlist Successful!</div>
       <p class="pb-4">You have successfully waitlisted on this class</p>
       <ion-button fill="clear" expand="block" class="flex justify-center bg-black rounded-lg text-white font-bold text-sm" @click="goDashBoard">BACK TO HOME</ion-button>

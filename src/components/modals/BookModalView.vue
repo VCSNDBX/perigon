@@ -1,6 +1,6 @@
 <template>
     <ion-content :scroll-y="false" class="ion-padding">
-        <div class="text-center px-4 h-full mt-5">
+        <div class="text-center px-4">
           <div class="font-extrabold text-xl pb-4 tracking-wide">BOOK SUCCESSFUL!</div>
           <p class="pb-4">You have successfully booked <span class="font-bold">3 seats</span> for this class.</p>
           <ion-button fill="clear" expand="block" class="flex justify-center bg-black rounded-lg text-white font-bold text-sm" @click="goDashBoard">BACK TO ACCOUNT</ion-button>

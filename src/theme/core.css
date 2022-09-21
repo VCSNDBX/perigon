@@ -48,7 +48,7 @@ ion-checkbox::part(container) {
 }
 
 ion-modal {
-    /* --background: rgba(255, 255, 255); */
+    --ion-background-color: #fff;
     --width: 80%;
     --height: 30%;
     --border-radius: 16px;
