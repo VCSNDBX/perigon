@@ -70,6 +70,7 @@ export default defineComponent({
         async bookClass() {
             const modal = await modalController.create({
             component: ModalView,
+            backdropDismiss: false,
             });
             return modal.present();
         },

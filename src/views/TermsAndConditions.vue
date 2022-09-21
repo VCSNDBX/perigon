@@ -65,6 +65,7 @@ export default defineComponent({
         onIonViewDidEnter(async () => {
             const modal = await modalController.create({
             component: ModalView,
+            backdropDismiss: false,
             });
             return modal.present();
         });
